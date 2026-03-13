@@ -1,10 +1,20 @@
-let texto = document.getElementById("texto");
+let itemLista = document.getElementById("itemLista");
 
-let btnAlterar = document.querySelector("#btnAlterar");
+let btnAdicionar = document.querySelector("#btnAdicionar");
+
+let lista = document.querySelector("#lista");
 
 
-btnAlterar.addEventListener("click", () => {
+btnAdicionar.addEventListener("click", () => {
 
-    texto.innerText = "Texto alterado com JavaScript!";
+    let texto = itemLista.value;
+
+    let li = document.createElement("li");
+
+    li.innerText = texto;
+
+    lista.appendChild(li);
+
+    itemLista.value = "";
 
 });
