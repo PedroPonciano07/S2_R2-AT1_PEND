@@ -2,20 +2,68 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Saudação</title>
-<link rel="stylesheet" href="style.css">
+<title>Alterar texto</title>
 </head>
 
 <body>
 
-<h2>Digite seu nome</h2>
+<p id="texto">Clique no botão para mudar este texto</p>
 
-<input type="text" id="nomeUsuario">
-<button id="btnMostrar">Mostrar</button>
-
-<p id="mensagem"></p>
+<button id="btnAlterar">Alterar Texto</button>
 
 <script src="script.js"></script>
 
 </body>
 </html>
+
+let texto = document.getElementById("texto");
+
+let btnAlterar = document.querySelector("#btnAlterar");
+
+
+btnAlterar.addEventListener("click", () => {
+
+    texto.innerText = "Texto alterado com JavaScript!";
+
+});
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Lista dinâmica</title>
+</head>
+
+<body>
+
+<input type="text" id="itemLista">
+
+<button id="btnAdicionar">Adicionar item</button>
+
+<ul id="lista"></ul>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+let itemLista = document.getElementById("itemLista");
+
+let btnAdicionar = document.querySelector("#btnAdicionar");
+
+let lista = document.querySelector("#lista");
+
+
+btnAdicionar.addEventListener("click", () => {
+
+    let texto = itemLista.value;
+
+    let li = document.createElement("li");
+
+    li.innerText = texto;
+
+    lista.appendChild(li);
+
+    itemLista.value = "";
+
+});

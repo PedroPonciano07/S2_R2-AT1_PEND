@@ -1,18 +1,10 @@
-let nomeUsuario = document.getElementById("nomeUsuario");
+let texto = document.getElementById("texto");
 
-let btnMostrar = document.querySelector("#btnMostrar");
-
-let mensagem = document.querySelector("#mensagem");
+let btnAlterar = document.querySelector("#btnAlterar");
 
 
-btnMostrar.addEventListener("click", () => {
+btnAlterar.addEventListener("click", () => {
 
-    let nome = nomeUsuario.value;
-
-    if(nome === ""){
-        mensagem.innerText = "Digite um nome!";
-    }else{
-        mensagem.innerText = `Olá ${nome}, seja bem-vindo!`;
-    }
+    texto.innerText = "Texto alterado com JavaScript!";
 
 });
