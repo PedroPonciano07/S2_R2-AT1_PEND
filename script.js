@@ -1,20 +1,37 @@
-let itemLista = document.getElementById("itemLista");
+
+
+let inputTarefa = document.getElementById("inputTarefa");
 
 let btnAdicionar = document.querySelector("#btnAdicionar");
 
-let lista = document.querySelector("#lista");
+let listaTarefas = document.querySelector("#listaTarefas");
+
+let mensagem = document.querySelector("#mensagem");
 
 
 btnAdicionar.addEventListener("click", () => {
 
-    let texto = itemLista.value;
+let texto = inputTarefa.value;
 
-    let li = document.createElement("li");
+if(texto === ""){
 
-    li.innerText = texto;
+mensagem.innerText = "Tarefa vazia!";
+mensagem.className = "text-danger fw-bold";
 
-    lista.appendChild(li);
+return;
 
-    itemLista.value = "";
+}
 
-});
+let li = document.createElement("li");
+
+li.innerText = texto;
+
+li.className = "list-group-item";
+
+listaTarefas.appendChild(li);
+
+inputTarefa.value = "";
+
+mensagem.innerText = "Tarefa adicionada!";
+mensagem.className = "text-success fw-bold";
+})
