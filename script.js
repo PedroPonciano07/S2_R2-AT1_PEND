@@ -1,5 +1,3 @@
-
-
 let inputTarefa = document.getElementById("inputTarefa");
 
 let btnAdicionar = document.querySelector("#btnAdicionar");
@@ -24,14 +22,38 @@ return;
 
 let li = document.createElement("li");
 
-li.innerText = texto;
+li.className = "list-group-item d-flex justify-content-between align-items-center";
 
-li.className = "list-group-item";
+
+let span = document.createElement("span");
+
+span.innerText = texto;
+
+
+let btnRemover = document.createElement("button");
+
+btnRemover.innerText = "Remover";
+
+btnRemover.className = "btn btn-danger btn-sm";
+
+
+btnRemover.addEventListener("click", () => {
+
+li.remove();
+
+});
+
+
+li.appendChild(span);
+
+li.appendChild(btnRemover);
 
 listaTarefas.appendChild(li);
 
+
 inputTarefa.value = "";
 
-mensagem.innerText = "Tarefa adicionada!";
+mensagem.innerText = "Tarefa adicionada com sucesso!";
 mensagem.className = "text-success fw-bold";
-})
+
+});
